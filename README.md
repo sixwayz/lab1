@@ -118,30 +118,51 @@ $ gist REPORT.md
 ## Homework
 
 1. Скачайте библиотеку *boost* с помощью утилиты **wget**. Адрес для скачивания `https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz`.
-[wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz]
+
+`[wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz]`
+
 2. Разархивируйте скаченный файл в директорию `~/boost_1_69_0`
-[tar -xvf boost_1_69_0.tar.gz]
+
+`[tar -xvf boost_1_69_0.tar.gz]`
+
 3. Подсчитайте количество файлов в директории `~/boost_1_69_0` **не включая** вложенные директории.
-[tree ~/boost_1_69_0 -L 1]
+
+`[tree ~/boost_1_69_0 -L 1]`
+
 4. Подсчитайте количество файлов в директории `~/boost_1_69_0` **включая** вложенные директории.
-[tree ~/boost_1_69_0]
+
+`[tree ~/boost_1_69_0]`
+
 5. Подсчитайте количество заголовочных файлов, файлов с расширением `.cpp`, сколько остальных файлов (не заголовочных и не `.cpp`).
+
 `[find ~/boost_1_69_0 -name "*.cpp" | wc -l]`
 `[1).cpp  13774
 2).h  296
 3).hpp  14912
 4)остальные  37847]`
+
 6. Найдите полный пусть до файла `any.hpp` внутри библиотеки *boost*.
+
 `[find ~/boost_1_69_0 -name "any.hpp"]`
+
 7. Выведите в консоль все файлы, где упоминается последовательность `boost::asio`.
+
 `[find ~/boost_1_69_0 -type f | xargs grep -i boost::asio]`
+
 8. Скомпилирутйе *boost*. Можно воспользоваться [инструкцией](https://www.boost.org/doc/libs/1_61_0/more/getting_started/unix-variants.html#or-build-custom-binaries) или [ссылкой](https://codeyarns.com/2017/01/24/how-to-build-boost-on-linux/).
+
 9. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию `~/boost-libs`.
+
 `[mv * ~/boost-libs]`
+
 10. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
+
 `[ncdu ~/boost-libs]`
+
 11. Найдите *топ10* самых "тяжёлых".
+
 `[ls -lS]`
+
 ```
 Copyright (c) 2015-2021 The ISC Authors
 ```
